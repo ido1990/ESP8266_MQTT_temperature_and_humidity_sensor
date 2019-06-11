@@ -212,13 +212,12 @@ void reconnectwifi() {
 void publishData(float p_temperature, float p_humidity, float p_pressure) {
   // create a JSON object
   // doc : https://github.com/bblanchon/ArduinoJson/wiki/API%20Reference
-  StaticJsonBuffer<200> jsonBuffer;
-  JsonObject& root = jsonBuffer.createObject();
+  StaticJsonDocument<200> jsonBuffer;
   // INFO: the data must be converted into a string; a problem occurs when using floats...
   root["temperature"] = (String)p_temperature;
   root["humidity"] = (String)p_humidity;
   root["pressure"] = (String)p_pressure;
-  root.prettyPrintTo(Serial);
+  serializeJsonPretty(jsonBuffer, Serial);
   Serial.println("");
   /*
      {
@@ -227,7 +226,7 @@ void publishData(float p_temperature, float p_humidity, float p_pressure) {
      }
   */
   char data[200];
-  root.printTo(data, root.measureLength() + 1);
+  serializeJson(jsonBuffer, data);
   client.publish(MQTT_SENSOR_TOPIC, data, true);
   yield();
 }
