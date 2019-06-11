@@ -1,5 +1,6 @@
 # ESP8266_MQTT_temperature_and_humidity_sensor
 
+## Updated to meet ArduinoJSON v6
 This is an ESP8266 based project to monitor the temperature and humidity in your house / rooms. 
 The sensor publishes the data to an MQTT topic. Deep sleep is used, not to distort the meassurements of the sensor I use Home Asssistant to display the results.
 
