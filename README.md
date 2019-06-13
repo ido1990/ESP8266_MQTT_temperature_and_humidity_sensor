@@ -64,8 +64,9 @@ Board         ->        Board
  theme: default
  title: BME280
  type: entities
- 
+``` 
  ### Graph Card
+```
  entities:
   - sensor.temperature
   - sensor.humidity
