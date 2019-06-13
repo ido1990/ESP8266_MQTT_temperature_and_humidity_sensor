@@ -25,6 +25,9 @@ Sensor        ->        Board
 Board         ->        Board
 - 0/GPIO16 - RST (wake-up purpose)
 
+## Layout for NodeMCU
+![layout](https://github.com/ido1990/ESP8266_MQTT_temperature_and_humidity_sensor/blob/master/Media/Layout_NodeMCU.png)
+
 
 ## To do:
   - include DHT22 sensor
