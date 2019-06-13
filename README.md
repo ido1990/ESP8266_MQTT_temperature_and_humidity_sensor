@@ -35,8 +35,8 @@ Board         ->        Board
   
   
 ## Home assistant template
-
- ### sensor:
+```
+  sensor:
   - platform: mqtt
     - state_topic: 'SENSORTOPIC'
     - name: 'NameTemperature'
@@ -52,3 +52,25 @@ Board         ->        Board
     - name: 'NamePressure'
     - unit_of_measurement: 'hPa'
     - value_template: '{{ value_json.pressure }}'
+```
+## UI Cards (Locelace)
+ ### Simple card
+ ```
+ entities:
+  - entity: sensor.temperature
+  - entity: sensor.humidity
+  - entity: sensor.pressure
+ show_header_toggle: false
+ theme: default
+ title: BME280
+ type: entities
+ 
+ ### Graph Card
+ entities:
+  - sensor.temperature
+  - sensor.humidity
+  - sensor.pressure
+ hours_to_show: 24
+ title: Temps
+ type: history-graph
+```
