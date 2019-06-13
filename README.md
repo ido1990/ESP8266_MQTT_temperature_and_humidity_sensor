@@ -53,7 +53,7 @@ Board         ->        Board
     - unit_of_measurement: 'hPa'
     - value_template: '{{ value_json.pressure }}'
 ```
-## UI Cards (Locelace)
+## UI Cards (Lovelace)
  ### Simple card
  ```
  entities:
